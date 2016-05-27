@@ -62,6 +62,7 @@
     _value = 0;
     _spacing = 5.f;
     _continuous = YES;
+    _isEdit = true;
     [self _updateAppearanceForState:self.enabled];
 }
 
@@ -309,7 +310,7 @@
 #pragma mark - Touches
 
 - (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
-    if (self.isEnabled) {
+    if (self.isEnabled && self.isEdit) {
         [super beginTrackingWithTouch:touch withEvent:event];
         if (_shouldBecomeFirstResponder && ![self isFirstResponder]) {
             [self becomeFirstResponder];
@@ -322,7 +323,7 @@
 }
 
 - (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
-    if (self.isEnabled) {
+    if (self.isEnabled && self.isEdit) {
         [super continueTrackingWithTouch:touch withEvent:event];
         [self _handleTouch:touch];
         return YES;

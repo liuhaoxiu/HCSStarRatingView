@@ -34,6 +34,7 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable BOOL accurateHalfStars;
 @property (nonatomic) IBInspectable BOOL continuous;
 
+@property (nonatomic) BOOL isEdit;
 @property (nonatomic) BOOL shouldBecomeFirstResponder;
 
 // Optional: if `nil` method will return `NO`.
